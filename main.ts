@@ -13,19 +13,15 @@ let number2 = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// generate two random numbers (0–99)
-basic.forever(function () {
-        number1 = randint(0, 99)
-        number2 = randint(0, 99)
-})
-
 // show number1
 input.onButtonPressed(Button.A, function () {
+    number1 = randint(0, 99)
     basic.showNumber(number1)
 })
 
 // show number2
 input.onButtonPressed(Button.B, function () {
+    number2 = randint(0, 99)
     basic.showNumber(number2)
 })
 
