@@ -13,23 +13,27 @@ let number2 = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
+number1 = randint(0, 99)
+number2 = randint(0, 99)
+
 // show number1
 input.onButtonPressed(Button.A, function () {
-    number1 = randint(0, 99)
-    basic.showNumber(number1)
+    basic.showString('#1:' + number1)
 })
 
 // show number2
 input.onButtonPressed(Button.B, function () {
-    number2 = randint(0, 99)
-    basic.showNumber(number2)
+    basic.showString('#2:' + number2)
 })
+
 
 // compare numbers
 input.onGesture(Gesture.Shake, function () {
     if (number1 < number2) {
-        basic.showString("<")
+        basic.showString(number1 + "<" + number2)
     } else  {
-        basic.showString(">")
+        basic.showString(number1 + ">" + number2)
     }
+    basic.clearScreen()
+    basic.showIcon(IconNames.Happy)
 })
